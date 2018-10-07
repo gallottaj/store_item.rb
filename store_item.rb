@@ -1,20 +1,16 @@
-# C. Use hashes with symbols to represent the following scenario:
+# Open the store_item.rb file you created from the previous lesson.
+# You are going to create a subclass for your store item. Your subclass is will be a specific type of your store item and inherits from your other class but adds at least one attribute and one behavior/method.
+# Example is you sell `Food` and some of your store items could be `Dairy`, which have a shelf life. You would create a class called `Dairy < Food` which inherits from your original class and has an additional attribute of `shelf_life` and a behavior/method of `spoiled?` which tells if the `shelf_life` is in the past.
 
-# C.1 - You are the owner of a store that sells items (choose a specific type of store item to model). Each item has various properties such as name, color, price, etc.
+#module - name with "able" ending - to add an exception method - need to write include method under class.
 
-# C.2 - Represent 3 items using hashes. Each hash should have the same keys with different values.
+  module
+    def 
+    p
 
-# C.3 - Be sure to use symbols for the keys. Try creating hashes using both types of hash symbol syntaxes. (Ruby syntax {:a => 123} vs. “JavaScript” syntax {a: 123}).
+      
+    end
 
-# product_1 = {:name => "bannana", :color => "yellow", :price => 1}
-# product_2 = {:name => "apple", :color => "red", :price => 2}
-# product_3 = {:name => "orange", :color => "orange", :price => 2}
-
-# p "The #{product_1[:color]} #{product_1[:name]} costs $#{product_1[:price]}"
-
-# Rewrite your store items using a class instead of a hash. The name of your class should not be `StoreItem` but a specific name of the type of store item you are modeling.
-# a) Choose which attributes should have “reader” methods and which attributes should have “writer” methods.
-# b) Create an instance from your store item class. Use puts statements to print the 3 attributes individually to the terminal.
 
 class Produce
   attr_reader :name, :color #shows information
@@ -41,8 +37,29 @@ end
 
   p produce_3.sale_price
 
+  class Dairy < Produce
+    attr_reader :spoiled, :shelf_life
+    attr_writer :date
 
+  def initialize (input_opts)
+    @date = input_opts[:date]
+  end
 
+    def date
+      if date is = Time.now
+        return "Spoiled"
+      end
 
+    def shelf_life
 
+    end
 
+    def spoiled
+      p "Shelf life is in the past"
+    end
+
+  end
+
+  dairy = Dairy.new({:name => "milk", :color => "white", :price => 1.99, :date => Time.now })
+
+  p dairy.date
