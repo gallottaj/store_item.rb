@@ -5,14 +5,20 @@
 
 require 'unirest'
 
-response = Unirest.get("https://api.wordnik.com/v4/word.json/dolphin/definitions?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=8dba4744d147470de953d228e1788d494480af9c8a004769a")
+p "Enter a word:"
+user_word = gets.chomp
 
-word = response.body[0]['word']
-definition1 = response.body[0]['text']
-definition2 = response.body[1]['text']
+response = Unirest.get("https://api.wordnik.com/v4/word.json/#{user_word}/definitions?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key= API KEY")
 
+# word = response.body[0]['word']
+definition = response.body[0]['text']
 
-p "The definition of #{word} is: #{definition1} #{definition2}"
+#make an each loop
+#definitions.each do |definition|
+#p definition['text']
+#end
+
+p "The definition of #{user_word} is: #{definition}"
 
 
 
