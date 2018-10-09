@@ -12,36 +12,36 @@
     end
 
     def brake
-    @speed = 0
+      @speed = 0
     end
   end
 
-class Car 
-  def initialize
-    @speed = 0
-    @direction = 'north'
+  class Car 
+    def initialize
+      @speed = 0
+      @direction = 'north'
+    end
+  
+    include Driveable
+  
+    def honk_horn
+      puts "Beeeeeeep!"
+    end
   end
 
- include Driveable
-
-  def honk_horn
-    puts "Beeeeeeep!"
+  class Bike < Car
+    def initialize
+      @speed = 0
+      @direction = 'north'
+    end
+  
+    include Driveable
+  
+    def ring_bell
+      puts "Ring ring!"
+    end
   end
-end
 
-class Bike < Car
-  def initialize
-    @speed = 0
-    @direction = 'north'
-  end
+  bike = Bike.new
 
-  include Driveable
-
-  def ring_bell
-    puts "Ring ring!"
-  end
-end
-
-bike = Bike.new
-
-p bike.accelerate
+  p bike.accelerate

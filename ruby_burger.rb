@@ -10,15 +10,15 @@ p "Welcome to Ruby Burger. We have specials on Hamburgers, Fish Filet and Cookie
 
 loop do
 
-order = gets.chomp
+  order = gets.chomp
 
   if order == "THATS IT"
     p "Pull up to the first window."
     break
-
+  
   elsif order == order.upcase
     p "Do you wan't cheese on that?"
-
+  
   else 
     p "I’m sorry, you’ll have to speak up Ma’am"
   end

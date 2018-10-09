@@ -14,10 +14,10 @@ class Animal
   end
 end
 
-  animal = Animal.new
+animal = Animal.new
 
-  animal.set_eat("apples")
+animal.set_eat("apples")
 
-  p animal.eat
+p animal.eat
 
 

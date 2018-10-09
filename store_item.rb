@@ -26,15 +26,15 @@ class Produce
   end
 end
 
-  produce_1 = Produce.new({:name => "apple", :color => "red", :price => 1.99}) #this is a hash
-  produce_2 = Produce.new({:name => "bannana", :color => "yellow", :price => 0.79})
-  produce_3 = Produce.new({:name => "orange", :color => "orange", :price => 2.79})
+produce_1 = Produce.new({:name => "apple", :color => "red", :price => 1.99}) #this is a hash
+produce_2 = Produce.new({:name => "bannana", :color => "yellow", :price => 0.79})
+produce_3 = Produce.new({:name => "orange", :color => "orange", :price => 2.79})
 
-  p produce_3.sale_price
+p produce_3.sale_price
 
-  class Dairy < Produce
-    attr_reader :spoiled, :shelf_life
-    attr_writer :date
+class Dairy < Produce
+  attr_reader :spoiled, :shelf_life
+  attr_writer :date
 
   include StoreFront
 
@@ -42,20 +42,20 @@ end
     @date = input_opts[:date]
   end
 
-    def date
-      if date is = Time.now
-        return "Spoiled"
-      end
-    end
-
-    def shelf_life
-
-    end
-
-    def spoiled
-      p "Shelf life is in the past"
+  def date
+    if date is = Time.now
+      return "Spoiled"
     end
   end
 
-  dairy = Dairy.new({:name => "milk", :color => "white", :price => 1.99, :date => Time.now})
-  dairy.spoiled
+  def shelf_life
+
+  end
+
+  def spoiled
+    p "Shelf life is in the past"
+  end
+end
+
+dairy = Dairy.new({:name => "milk", :color => "white", :price => 1.99, :date => Time.now})
+dairy.spoiled
