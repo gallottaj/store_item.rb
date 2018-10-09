@@ -8,9 +8,11 @@ require 'unirest'
 response = Unirest.get("https://api.wordnik.com/v4/word.json/dolphin/definitions?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=8dba4744d147470de953d228e1788d494480af9c8a004769a")
 
 word = response.body[0]['word']
-definition = response.body[0]['text']
+definition1 = response.body[0]['text']
+definition2 = response.body[1]['text']
 
-p "The definition of #{word} is: #{definition}"
+
+p "The definition of #{word} is: #{definition1} #{definition2}"
 
 
 
